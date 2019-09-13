@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
   <title>Mosu</title>
   <meta charset="utf-8">
   <meta name="description" content="Mosu">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- import CSS -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
   <style media="screen">
-    #box {
+    #app {
       height: 100%;
     }
 
@@ -18,6 +20,7 @@
       justify-content: center;
       flex-flow: column;
       text-align: center;
+      align-items: center;
     }
 
     .inner h1 {
@@ -28,20 +31,11 @@
     .inner p {
       line-height: 40px;
     }
-
-    #nav {
-      margin: 20px auto;
-    }
-
-    #nav li {
-      display: inline-block;
-      padding: 0 10px;
-    }
   </style>
 </head>
 
 <body>
-  <div id="box">
+  <div id="app">
     <div class="inner">
       <h1>Mosu</h1>
       <p>淡定的人生从不需要起起落落</p>
@@ -51,26 +45,32 @@
       <p>上岸的鱼不再是鱼，真正进入太空的人也不再是人了</p>
       <p>吧海弄干的鱼在海干前上了陆地，从一片黑暗森林奔向另一片黑暗森林</p>
       <p>藏好自己，做好清理</p>
-      <ul id="nav">
-        <li>
-          <el-button @click="javascript:window.location.href='/blog'" type="primary" round icon="el-icon-d-arrow-right">
-            前进四</el-button>
-        </li>
-      </ul>
+      <el-col :span="4">
+        <el-button @click="openUrl()" type="primary" round icon="el-icon-d-arrow-right">
+          前进四</el-button>
+      </el-col>
+      
     </div>
   </div>
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data: function () {
-        return {
-          visible: false
-        }
-      }
-    })
-  </script>
 </body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: function () {
+      return {
+        visible: false
+      }
+    },
+    methods: {
+      openUrl () {
+        window.location.href = '/blog';
+      }
+    },
+  })
+</script>
 
 </html>
