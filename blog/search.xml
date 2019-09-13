@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[markdown用法]]></title>
+    <url>%2Fblog%2F2019%2F09%2F13%2Fhow2useMD%2F</url>
+    <content type="text"><![CDATA[markdown用法功能快捷键 撤销：Ctrl/Command + Z 重做：Ctrl/Command + Y 加粗：Ctrl/Command + B 斜体：Ctrl/Command + I 标题：Ctrl/Command + Shift + H 无序列表：Ctrl/Command + Shift + U 有序列表：Ctrl/Command + Shift + O 检查列表：Ctrl/Command + Shift + C 插入代码：Ctrl/Command + Shift + K 插入链接：Ctrl/Command + Shift + L 插入图片：Ctrl/Command + Shift + G 文本样式 ① 斜体；② 斜体； ① 加粗；② 加粗； ==高亮文本== 删除文本 引用文本 H~2~O是液体 2^10^运算结果是1024 自定义颜色 列表Part-01 项目一 项目A 项目a 项目二 项目B 项目b 项目三 项目C 项目c 项目四 项目D 项目d Part-02 项目1 项目2 项目3 Part-03 [ ] 计划任务 [x] 完成任务 代码块这里展示语法高亮 123# 此处展示代码块if __name__ == "__main__"": pass 表格 项目 Value 电脑 $1600 手机 $12 导管 $1 Column 1 Column 2 Column 3 left-aligned 文本居左 centered 文本居中 right-aligned 文本居右 SmartyPantsSmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例如： TYPE ASCII HTML Single backticks &#39;Isn&#39;t this fun?&#39; ‘Isn’t this fun?’ Quotes &quot;Isn&#39;t this fun?&quot; “Isn’t this fun?” Dashes -- is en-dash, --- is em-dash — is en-dash, —- is em-dash 脚注一个具有脚注的文本A。1一个具有脚注的文本B。2 1. 解释A。 &#8617; 2. 解释B。 &#8617; 注释Markdown将文本转换为HTML。*[HTML]: 超文本标记语言 甘特图1234567gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid section 现有任务 已完成: done, des1, 2014-01-06, 2014-01-08 进行中: active, des2, 2014-01-09,3d 计划中: des3, after des2, 5d 公式Gamma公式展示 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ 是通过 Euler integral \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,$\Sigma(x) = \lim^{x \to -\infty}_{y \to 0}{\frac{x}{y}}$ 您可以使用渲染KaTeX数学表达式 KaTeX 你可以找到更多相关的信息 LaTeX 数学表达式 LaTeX mermaid时序图12345678sequenceDiagram张三 -&gt;&gt; 李四: 你好！李四, 最近怎么样？李四 --&gt;&gt; 王五: 你最近怎么样，王五？李四 --x 张三: 我很好，谢谢！李四 -x 王五: 我很好，谢谢！Note right of 王五: 李四想了很长时间, &lt;br/&gt;文字太长了不适合放&lt;br/&gt;在一行。李四 --&gt;&gt; 张三: 打量着王五...张三 -&gt;&gt; 王五: 很好... 王五, 你怎么样？ 流程图12345graph LRA[长方形] -- 链接 --&gt; B((圆))A --&gt; C(圆角长方形)B --&gt; D&#123;菱形&#125;C --&gt; D Flowchart 流程图123456789flowchartst=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 序列图实例1234A-&gt;B:helloB-&gt;C:A says hello to me!C-&gt;C:emmmmm....C--&gt;A:wow, that`s wonderful]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[oracle初步语法示例]]></title>
+    <url>%2Fblog%2F2019%2F09%2F13%2ForacleSimple%2F</url>
+    <content type="text"><![CDATA[oracle初步语法示例基本语句1234select e.*, j.* from emp e, jobs j where e.jid = j.jid(+); -- (+)的存在表示该表值可为空update emp set id = 101 where name like '_k%';delete from emp where id in (101, 100);insert into emp(id, name) values(101, 'kkk'); 单行函数123456789decode(col, case1, result1, case2, result2, default);sign(); -- 判断col的值，为正返回1，为负返回-1，为0返回0to_date(a_date, 'DD-MON-YY','nls_date_language=american');to_char('date string', 'YYYY-MM-DD');nvl(col, default); -- 当col为空时，返回defaultlag(kid, i, null) over (order by eid); -- 以eid为顺序查询上i条kid记录leap(kid, i, null) over (order by eid); -- 以eid为顺序查询下i条Kid记录extract(month from a_date); -- 拆分日期，首参数可选month,year,day等months_between(now_date, last_date); -- 得到last_date到now_date的月份数，/12得到年份数，float 多行函数1234567891011count();sum();avg();max();min();-- 示例select count(*)from empwhere emp.id = 100group by emp.did;-- count不一定需要group,但是当查询列多于count时，需要group 其他查询固定条数，类似mysql的limit123select * from (select * from emp order by eid) awhere rownum between 2 and 6; 生成树状结构123select e.employee_id, e.manager_id, level, lpad(e.last_name, length(e.last_name) + (level - 1 )* 2,'_') last_namefrom employees econnect by prior e.manager_id = e.employee_id; 多次匹配1where REGEXP_LIKE(last_name, 'K|J|L|M'); with语法123456789101112-- 可以用with暂存一个子查询，方便多次调用with MAX_SAL_CALC as (select e.job_id, max(salary) ms from employees e group by e.job_id order by ms desc)select j.job_title, m.ms job_totalfrom jobs j, MAX_SAL_CALC mwhere j.job_id = m.job_idand m.ms &gt; (select ma.ms from MAX_SAL_CALC ma where rownum &lt; 2) / 2; 安装oracle-XE遇到的问题：1628，基于脚本的安装失败原因：oracle卸载不完全 清理注册表中Oracle项并重启即可]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2Fblog%2F2019%2F09%2F12%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

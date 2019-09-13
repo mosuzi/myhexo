@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+  (function(){
+        if(''){
+            if (prompt('请输入密码') !== ''){
+                alert('密码错误');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+  <meta name="description" content="markdown用法合集，不过由于博客功能尚未完善，因此部分公式和图表不能显示完全，但这不影响markdown本身的使用，渲染无效的公式和图表仍然会显示源码">
+<meta name="keywords" content="markdown">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown用法">
+<meta property="og:url" content="http://blog.mosuzi.top/2019/09/13/how2useMD/index.html">
+<meta property="og:site_name" content="Mosu">
+<meta property="og:description" content="markdown用法合集，不过由于博客功能尚未完善，因此部分公式和图表不能显示完全，但这不影响markdown本身的使用，渲染无效的公式和图表仍然会显示源码">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/208px-Markdown-mark.svg.png">
+<meta property="og:image" content="d:/WORK/games/timg.gif">
+<meta property="og:updated_time" content="2019-09-13T06:49:40.960Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="markdown用法">
+<meta name="twitter:description" content="markdown用法合集，不过由于博客功能尚未完善，因此部分公式和图表不能显示完全，但这不影响markdown本身的使用，渲染无效的公式和图表仍然会显示源码">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/208px-Markdown-mark.svg.png">
+  <link rel="canonical" href="http://blog.mosuzi.top/2019/09/13/how2useMD/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>markdown用法 | Mosu</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mosu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">Mosuzi`s capital</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://blog.mosuzi.top/blog/2019/09/13/how2useMD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mosuzi">
+      <meta itemprop="description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of yellow sand can not enter the Mosu Valley and the empire has established.">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mosu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">markdown用法
+
+          
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-13 13:24:30 / 修改时间：14:49:40" itemprop="dateCreated datePublished" datetime="2019-09-13T13:24:30+08:00">2019-09-13</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/2019/09/13/how2useMD/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/2019/09/13/how2useMD/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+            <div class="post-description">markdown用法合集，不过由于博客功能尚未完善，因此部分公式和图表不能显示完全，但这不影响markdown本身的使用，渲染无效的公式和图表仍然会显示源码</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="markdown用法"><a href="#markdown用法" class="headerlink" title="markdown用法"></a>markdown用法</h4><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/208px-Markdown-mark.svg.png" alt="Markdown"></p><p><img src="D:\WORK\games\timg.gif" alt></p><h4 id="功能快捷键"><a href="#功能快捷键" class="headerlink" title="功能快捷键"></a>功能快捷键</h4><ol>
+<li>撤销：<kbd>Ctrl/Command</kbd> + <kbd>Z</kbd></li>
+<li>重做：<kbd>Ctrl/Command</kbd> + <kbd>Y</kbd></li>
+<li>加粗：<kbd>Ctrl/Command</kbd> + <kbd>B</kbd></li>
+<li>斜体：<kbd>Ctrl/Command</kbd> + <kbd>I</kbd></li>
+<li>标题：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd></li>
+<li>无序列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd></li>
+<li>有序列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd></li>
+<li>检查列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd></li>
+<li>插入代码：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd></li>
+<li>插入链接：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd></li>
+<li>插入图片：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd></li>
+</ol><a id="more"></a>
+
+
+<h4 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h4><ol>
+<li><p>① <em>斜体</em>；② <em>斜体</em>；</p>
+</li>
+<li><p>① <strong>加粗</strong>；② <strong>加粗</strong>；</p>
+</li>
+<li><p>==高亮文本==</p>
+</li>
+<li><p><del>删除文本</del></p>
+</li>
+<li><blockquote>
+<p>引用文本</p>
+</blockquote>
+</li>
+<li><p>H~2~O是液体</p>
+</li>
+<li><p>2^10^运算结果是1024</p>
+</li>
+<li><p>自定义<font color="red">颜色</font></p>
+</li>
+</ol>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p><strong>Part-01</strong></p>
+<ul>
+<li>项目一<ul>
+<li>项目A<ul>
+<li>项目a</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>项目二</p>
+<ul>
+<li>项目B<ul>
+<li>项目b</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>项目三</p>
+<ul>
+<li>项目C<ul>
+<li>项目c</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>项目四</p>
+<ul>
+<li>项目D<ul>
+<li>项目d</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Part-02</strong></p>
+<ol>
+<li>项目1</li>
+<li>项目2</li>
+<li>项目3</li>
+</ol>
+<p><strong>Part-03</strong></p>
+<ul>
+<li>[ ] 计划任务</li>
+<li>[x] 完成任务</li>
+</ul>
+<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><p>这里展示<code>语法高亮</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此处展示代码块</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span><span class="string">":</span></span><br><span class="line"><span class="string">  pass</span></span><br></pre></td></tr></table></figure>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电脑</td>
+<td>$1600</td>
+</tr>
+<tr>
+<td>手机</td>
+<td>$12</td>
+</tr>
+<tr>
+<td>导管</td>
+<td>$1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Column 1</th>
+<th style="text-align:center">Column 2</th>
+<th style="text-align:right">Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">left-aligned 文本居左</td>
+<td style="text-align:center">centered 文本居中</td>
+<td style="text-align:right">right-aligned 文本居右</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>SmartyPants</strong><br>SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例如：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>TYPE</th>
+<th>ASCII</th>
+<th>HTML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single backticks</td>
+<td><code>&#39;Isn&#39;t this fun?&#39;</code></td>
+<td>‘Isn’t this fun?’</td>
+</tr>
+<tr>
+<td>Quotes</td>
+<td><code>&quot;Isn&#39;t this fun?&quot;</code></td>
+<td>“Isn’t this fun?”</td>
+</tr>
+<tr>
+<td>Dashes</td>
+<td><code>-- is en-dash, --- is em-dash</code></td>
+<td>— is en-dash, —- is em-dash</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h4><p>一个具有脚注的文本A。<sup><a href="#fn_1" id="reffn_1">1</a></sup><br>一个具有脚注的文本B。<sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
+<blockquote id="fn_1">
+<sup>1</sup>. 解释A。<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. 解释B。<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>Markdown将文本转换为HTML。<br>*[HTML]: 超文本标记语言</p>
+<h4 id="甘特图"><a href="#甘特图" class="headerlink" title="甘特图"></a>甘特图</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">        dateFormat  YYYY-MM-DD</span><br><span class="line">        title Adding GANTT diagram functionality to mermaid</span><br><span class="line">        section 现有任务</span><br><span class="line">        已完成: done, des1, 2014-01-06, 2014-01-08</span><br><span class="line">        进行中: active, des2, 2014-01-09,3d</span><br><span class="line">        计划中: des3, after des2, 5d</span><br></pre></td></tr></table></figure>
+<h4 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h4><p>Gamma公式展示 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ 是通过 Euler integral</p>
+<script type="math/tex; mode=display">
+\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,</script><p>$\Sigma(x) = \lim^{x \to -\infty}_{y \to 0}{\frac{x}{y}}$</p>
+<p>您可以使用渲染KaTeX数学表达式 <a href="https://khan.github.io/KaTeX/" target="_blank" rel="noopener">KaTeX</a></p>
+<p>你可以找到更多相关的信息 <strong>LaTeX</strong> 数学表达式 <a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="noopener">LaTeX</a></p>
+<h4 id="mermaid"><a href="#mermaid" class="headerlink" title="mermaid"></a>mermaid</h4><h5 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">张三 -&gt;&gt; 李四: 你好！李四, 最近怎么样？</span><br><span class="line">李四 --&gt;&gt; 王五: 你最近怎么样，王五？</span><br><span class="line">李四 --x 张三: 我很好，谢谢！</span><br><span class="line">李四 -x 王五: 我很好，谢谢！</span><br><span class="line">Note right of 王五: 李四想了很长时间, &lt;br/&gt;文字太长了不适合放&lt;br/&gt;在一行。</span><br><span class="line">李四 --&gt;&gt; 张三: 打量着王五...</span><br><span class="line">张三 -&gt;&gt; 王五: 很好... 王五, 你怎么样？</span><br></pre></td></tr></table></figure>
+<h5 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[长方形] -- 链接 --&gt; B((圆))</span><br><span class="line">A --&gt; C(圆角长方形)</span><br><span class="line">B --&gt; D&#123;菱形&#125;</span><br><span class="line">C --&gt; D</span><br></pre></td></tr></table></figure>
+<h4 id="Flowchart-流程图"><a href="#Flowchart-流程图" class="headerlink" title="Flowchart 流程图"></a>Flowchart 流程图</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">flowchart</span><br><span class="line">st=&gt;start: 开始</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line">op=&gt;operation: 我的操作</span><br><span class="line">cond=&gt;condition: 确认？</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<h4 id="序列图实例"><a href="#序列图实例" class="headerlink" title="序列图实例"></a>序列图实例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A-&gt;B:hello</span><br><span class="line">B-&gt;C:A says hello to me!</span><br><span class="line">C-&gt;C:emmmmm....</span><br><span class="line">C--&gt;A:wow, that`s wonderful</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/blog/tags/markdown/" rel="tag"># markdown</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/2019/09/13/oracleSimple/" rel="next" title="oracle初步语法示例">
+                  <i class="fa fa-chevron-left"></i> oracle初步语法示例
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#markdown用法"><span class="nav-number">1.</span> <span class="nav-text">markdown用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#功能快捷键"><span class="nav-number">2.</span> <span class="nav-text">功能快捷键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本样式"><span class="nav-number">3.</span> <span class="nav-text">文本样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表"><span class="nav-number">4.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码块"><span class="nav-number">5.</span> <span class="nav-text">代码块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表格"><span class="nav-number">6.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#脚注"><span class="nav-number">7.</span> <span class="nav-text">脚注</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">8.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#甘特图"><span class="nav-number">9.</span> <span class="nav-text">甘特图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#公式"><span class="nav-number">10.</span> <span class="nav-text">公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mermaid"><span class="nav-number">11.</span> <span class="nav-text">mermaid</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#时序图"><span class="nav-number">11.1.</span> <span class="nav-text">时序图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#流程图"><span class="nav-number">11.2.</span> <span class="nav-text">流程图</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flowchart-流程图"><span class="nav-number">12.</span> <span class="nav-text">Flowchart 流程图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#序列图实例"><span class="nav-number">13.</span> <span class="nav-text">序列图实例</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Mosuzi</p>
+  <div class="site-description" itemprop="description">Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of yellow sand can not enter the Mosu Valley and the empire has established.</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/blog/tags/">
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mosuzi</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/blog/js/utils.js?v=7.4.0"></script><script src="/blog/js/motion.js?v=7.4.0"></script>
+<script src="/blog/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/blog/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: '4273vpxOkfRAxEX158CJJX3x-gzGzoHsz',
+    appKey: 'lUfxoeH4qd6UOYzNVK38Hh6v',
+    placeholder: '留下你的金句吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/click.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/blog/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>

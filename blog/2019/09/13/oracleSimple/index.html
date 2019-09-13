@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+  (function(){
+        if(''){
+            if (prompt('请输入密码') !== ''){
+                alert('密码错误');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+  <meta name="description" content="这是学习oracle的笔记，只显示了示例，未能细细解释，完善中...">
+<meta name="keywords" content="Oracle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oracle初步语法示例">
+<meta property="og:url" content="http://blog.mosuzi.top/2019/09/13/oracleSimple/index.html">
+<meta property="og:site_name" content="Mosu">
+<meta property="og:description" content="这是学习oracle的笔记，只显示了示例，未能细细解释，完善中...">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-13T06:51:18.623Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="oracle初步语法示例">
+<meta name="twitter:description" content="这是学习oracle的笔记，只显示了示例，未能细细解释，完善中...">
+  <link rel="canonical" href="http://blog.mosuzi.top/2019/09/13/oracleSimple/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>oracle初步语法示例 | Mosu</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mosu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">Mosuzi`s capital</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://blog.mosuzi.top/blog/2019/09/13/oracleSimple/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mosuzi">
+      <meta itemprop="description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of yellow sand can not enter the Mosu Valley and the empire has established.">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mosu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">oracle初步语法示例
+
+          
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-13 13:13:54 / 修改时间：14:51:18" itemprop="dateCreated datePublished" datetime="2019-09-13T13:13:54+08:00">2019-09-13</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/2019/09/13/oracleSimple/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/2019/09/13/oracleSimple/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+            <div class="post-description">这是学习oracle的笔记，只显示了示例，未能细细解释，完善中...</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="oracle初步语法示例"><a href="#oracle初步语法示例" class="headerlink" title="oracle初步语法示例"></a>oracle初步语法示例</h4><h5 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.*, j.* <span class="keyword">from</span> emp e, jobs j <span class="keyword">where</span> e.jid = j.jid(+); <span class="comment">-- (+)的存在表示该表值可为空</span></span><br><span class="line"><span class="keyword">update</span> emp <span class="keyword">set</span> <span class="keyword">id</span> = <span class="number">101</span> <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'_k%'</span>;</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> emp <span class="keyword">where</span> <span class="keyword">id</span> <span class="keyword">in</span> (<span class="number">101</span>, <span class="number">100</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> emp(<span class="keyword">id</span>, <span class="keyword">name</span>) <span class="keyword">values</span>(<span class="number">101</span>, <span class="string">'kkk'</span>);</span><br></pre></td></tr></table></figure><a id="more"></a>
+<h5 id="单行函数"><a href="#单行函数" class="headerlink" title="单行函数"></a>单行函数</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">decode(col, case1, result1, case2, result2, default);</span><br><span class="line">sign(); <span class="comment">-- 判断col的值，为正返回1，为负返回-1，为0返回0</span></span><br><span class="line">to_date(a_date, 'DD-MON-YY','nls_date_language=american');</span><br><span class="line">to_char('date string', 'YYYY-MM-DD');</span><br><span class="line">nvl(col, default); <span class="comment">-- 当col为空时，返回default</span></span><br><span class="line">lag(kid, i, null) over (order by eid); <span class="comment">-- 以eid为顺序查询上i条kid记录</span></span><br><span class="line">leap(kid, i, null) over (order by eid); <span class="comment">-- 以eid为顺序查询下i条Kid记录</span></span><br><span class="line">extract(month from a_date); <span class="comment">-- 拆分日期，首参数可选month,year,day等</span></span><br><span class="line">months_between(now_date, last_date); <span class="comment">-- 得到last_date到now_date的月份数，/12得到年份数，float</span></span><br></pre></td></tr></table></figure>
+<h5 id="多行函数"><a href="#多行函数" class="headerlink" title="多行函数"></a>多行函数</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">count();</span><br><span class="line">sum();</span><br><span class="line">avg();</span><br><span class="line">max();</span><br><span class="line">min();</span><br><span class="line"><span class="comment">-- 示例</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*)</span><br><span class="line"><span class="keyword">from</span> emp</span><br><span class="line"><span class="keyword">where</span> emp.id = <span class="number">100</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> emp.did;</span><br><span class="line"><span class="comment">-- count不一定需要group,但是当查询列多于count时，需要group</span></span><br></pre></td></tr></table></figure>
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><h6 id="查询固定条数，类似mysql的limit"><a href="#查询固定条数，类似mysql的limit" class="headerlink" title="查询固定条数，类似mysql的limit"></a>查询固定条数，类似mysql的limit</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span></span><br><span class="line">  (<span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">order</span> <span class="keyword">by</span> eid) a</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">rownum</span> <span class="keyword">between</span> <span class="number">2</span> <span class="keyword">and</span> <span class="number">6</span>;</span><br></pre></td></tr></table></figure>
+<h6 id="生成树状结构"><a href="#生成树状结构" class="headerlink" title="生成树状结构"></a>生成树状结构</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.employee_id, e.manager_id, <span class="keyword">level</span>, <span class="keyword">lpad</span>(e.last_name, <span class="keyword">length</span>(e.last_name) + (<span class="keyword">level</span> - <span class="number">1</span> )* <span class="number">2</span>,<span class="string">'_'</span>) last_name</span><br><span class="line"><span class="keyword">from</span> employees e</span><br><span class="line"><span class="keyword">connect</span> <span class="keyword">by</span> <span class="keyword">prior</span> e.manager_id = e.employee_id;</span><br></pre></td></tr></table></figure>
+<h6 id="多次匹配"><a href="#多次匹配" class="headerlink" title="多次匹配"></a>多次匹配</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where REGEXP_LIKE(last_name, 'K|J|L|M');</span><br></pre></td></tr></table></figure>
+<h6 id="with语法"><a href="#with语法" class="headerlink" title="with语法"></a>with语法</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 可以用with暂存一个子查询，方便多次调用</span></span><br><span class="line"><span class="keyword">with</span> MAX_SAL_CALC <span class="keyword">as</span> </span><br><span class="line">     (<span class="keyword">select</span> e.job_id, <span class="keyword">max</span>(salary) ms</span><br><span class="line">     <span class="keyword">from</span> employees e</span><br><span class="line">     <span class="keyword">group</span> <span class="keyword">by</span> e.job_id</span><br><span class="line">     <span class="keyword">order</span> <span class="keyword">by</span> ms <span class="keyword">desc</span>)</span><br><span class="line"><span class="keyword">select</span> j.job_title, m.ms job_total</span><br><span class="line"><span class="keyword">from</span> jobs j, MAX_SAL_CALC m</span><br><span class="line"><span class="keyword">where</span> j.job_id = m.job_id</span><br><span class="line"><span class="keyword">and</span> m.ms &gt; </span><br><span class="line">    (<span class="keyword">select</span> ma.ms <span class="keyword">from</span> MAX_SAL_CALC ma</span><br><span class="line">    <span class="keyword">where</span> <span class="keyword">rownum</span> &lt; <span class="number">2</span>) / <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="安装oracle-XE"><a href="#安装oracle-XE" class="headerlink" title="安装oracle-XE"></a>安装oracle-XE</h5><h6 id="遇到的问题：1628，基于脚本的安装失败"><a href="#遇到的问题：1628，基于脚本的安装失败" class="headerlink" title="遇到的问题：1628，基于脚本的安装失败"></a>遇到的问题：1628，基于脚本的安装失败</h6><p>原因：oracle卸载不完全</p>
+<p>清理注册表中Oracle项并重启即可</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/blog/tags/Oracle/" rel="tag"># Oracle</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/2019/09/12/hello-world/" rel="next" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/2019/09/13/how2useMD/" rel="prev" title="markdown用法">
+                  markdown用法 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#oracle初步语法示例"><span class="nav-number">1.</span> <span class="nav-text">oracle初步语法示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本语句"><span class="nav-number">1.1.</span> <span class="nav-text">基本语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#单行函数"><span class="nav-number">1.2.</span> <span class="nav-text">单行函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多行函数"><span class="nav-number">1.3.</span> <span class="nav-text">多行函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他"><span class="nav-number">1.4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#查询固定条数，类似mysql的limit"><span class="nav-number">1.4.1.</span> <span class="nav-text">查询固定条数，类似mysql的limit</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#生成树状结构"><span class="nav-number">1.4.2.</span> <span class="nav-text">生成树状结构</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#多次匹配"><span class="nav-number">1.4.3.</span> <span class="nav-text">多次匹配</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#with语法"><span class="nav-number">1.4.4.</span> <span class="nav-text">with语法</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装oracle-XE"><span class="nav-number">1.5.</span> <span class="nav-text">安装oracle-XE</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#遇到的问题：1628，基于脚本的安装失败"><span class="nav-number">1.5.1.</span> <span class="nav-text">遇到的问题：1628，基于脚本的安装失败</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Mosuzi</p>
+  <div class="site-description" itemprop="description">Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of yellow sand can not enter the Mosu Valley and the empire has established.</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/blog/tags/">
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mosuzi</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/blog/js/utils.js?v=7.4.0"></script><script src="/blog/js/motion.js?v=7.4.0"></script>
+<script src="/blog/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/blog/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: '4273vpxOkfRAxEX158CJJX3x-gzGzoHsz',
+    appKey: 'lUfxoeH4qd6UOYzNVK38Hh6v',
+    placeholder: '留下你的金句吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/click.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/blog/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>
