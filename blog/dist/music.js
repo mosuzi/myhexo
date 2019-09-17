@@ -7,7 +7,7 @@ const ap = new APlayer({
       {
         name: "告白の夜",
         artist: 'Ayasa绚沙',
-        url: '/music/Ayasa.flac'
+        url: '/music/Ayasa.mp3'
       },
       {
         name: 'The dragonborn comes',
