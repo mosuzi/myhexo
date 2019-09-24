@@ -65,32 +65,33 @@
     })();
 </script>
 
-  <meta name="description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of desert can not erode the Mosu Valley and the empire has established.">
-<meta name="keywords" content="mosuzi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mosu">
-<meta property="og:url" content="http://blog.mosuzi.top/index.html">
+  <meta name="description" content="表达式全集    字符 描述     \ 将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“n”匹配字符“n”。“\n”匹配一个换行符。串行“\\”匹配“\”而“\(”则匹配“(”。   ^ 匹配输入字符串的开始位置。如果设置了RegExp对象的Multiline属性，^也匹配“\n”或“\r”之后的位置。   $ 匹配输入字符串的结束位置。如果设置了Re">
+<meta name="keywords" content="正则,re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式全集">
+<meta property="og:url" content="http://blog.mosuzi.top/reDoc/index.html">
 <meta property="og:site_name" content="Mosu">
-<meta property="og:description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of desert can not erode the Mosu Valley and the empire has established.">
+<meta property="og:description" content="表达式全集    字符 描述     \ 将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“n”匹配字符“n”。“\n”匹配一个换行符。串行“\\”匹配“\”而“\(”则匹配“(”。   ^ 匹配输入字符串的开始位置。如果设置了RegExp对象的Multiline属性，^也匹配“\n”或“\r”之后的位置。   $ 匹配输入字符串的结束位置。如果设置了Re">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-24T09:13:54.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mosu">
-<meta name="twitter:description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of desert can not erode the Mosu Valley and the empire has established.">
-  <link rel="canonical" href="http://blog.mosuzi.top/">
+<meta name="twitter:title" content="正则表达式全集">
+<meta name="twitter:description" content="表达式全集    字符 描述     \ 将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“n”匹配字符“n”。“\n”匹配一个换行符。串行“\\”匹配“\”而“\(”则匹配“(”。   ^ 匹配输入字符串的开始位置。如果设置了RegExp对象的Multiline属性，^也匹配“\n”或“\r”之后的位置。   $ 匹配输入字符串的结束位置。如果设置了Re">
+  <link rel="canonical" href="http://blog.mosuzi.top/reDoc/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Mosu</title>
+  <title>正则表达式全集 | Mosu</title>
   
 
 
@@ -258,13 +259,14 @@
           <div id="content" class="content">
             <!-- <div id="aplayer"></div> -->
             
+
+  
   <div id="posts" class="posts-expand">
-      
-          <article itemscope itemtype="http://schema.org/Article">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block home">
+  <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="http://blog.mosuzi.top/blog/reDoc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -277,9 +279,8 @@
       <meta itemprop="name" content="Mosu">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/reDoc/" class="post-title-link" itemprop="url">正则表达式全集</a>
+        <h2 class="post-title" itemprop="name headline">正则表达式全集
+
           
         </h2>
 
@@ -318,6 +319,14 @@
           
 
           
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
   
   <span class="post-meta-item">
     
@@ -353,7 +362,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="表达式全集"><a href="#表达式全集" class="headerlink" title="表达式全集"></a>表达式全集</h3><div class="table-container">
+        <h3 id="表达式全集"><a href="#表达式全集" class="headerlink" title="表达式全集"></a>表达式全集</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -551,437 +560,134 @@
 </tr>
 </tbody>
 </table>
+</div><a id="more"></a>
+<h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">用户名</th>
+<th>/^[a-z0-9_-]{3,16}$/</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">密码</td>
+<td>/^[a-z0-9_-]{6,18}$/</td>
+</tr>
+<tr>
+<td style="text-align:center">十六进制值</td>
+<td>/^#?([a-f0-9]{6}\</td>
+<td>[a-f0-9]{3})$/</td>
+</tr>
+<tr>
+<td style="text-align:center">电子邮箱</td>
+<td>/^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/ /^[a-z\d]+(.[a-z\d]+)*@(<a href="-[\da-z]">\da-z</a>?)+(.{1,2}[a-z]+)+$/</td>
+</tr>
+<tr>
+<td style="text-align:center">URL</td>
+<td>/^(https?:\/\/)?([\da-z.-]+).([a-z.]{2,6})([\/\w .-]<em>)</em>\/?$/</td>
+</tr>
+<tr>
+<td style="text-align:center">IP 地址</td>
+<td>/((2[0-4]\d\</td>
+<td>25[0-5]\</td>
+<td>[01]?\d\d?).){3}(2[0-4]\d\</td>
+<td>25[0-5]\</td>
+<td>[01]?\d\d?)/ /^(?:(?:25[0-5]\</td>
+<td>2[0-4][0-9]\</td>
+<td>[01]?[0-9][0-9]?).){3}(?:25[0-5]\</td>
+<td>2[0-4][0-9]\</td>
+<td>[01]?[0-9][0-9]?)$/</td>
+</tr>
+<tr>
+<td style="text-align:center">HTML 标签</td>
+<td>/^&lt;([a-z]+)(<sup><a href="#fn_<" id="reffn_<"><</a></sup>+)<em>(?:&gt;(.</em>)&lt;\/\1&gt;\</td>
+<td>\s+\/&gt;)$/</td>
+</tr>
+<tr>
+<td style="text-align:center">删除代码\注释</td>
+<td>(?&lt;!http:\</td>
+<td>\S)//.*$</td>
+</tr>
+<tr>
+<td style="text-align:center">Unicode编码中的汉字范围</td>
+<td>/^[\u2E80-\u9FFF]+$/</td>
+</tr>
+</tbody>
+</table>
 </div>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/reDoc/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
+
     </div>
 
     
     
     
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Mosuzi</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.mosuzi.top/reDoc/" title="正则表达式全集">http://blog.mosuzi.top/reDoc/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+</div>
+
+      
+
       <footer class="post-footer">
-          <div class="post-eof"></div>
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/blog/tags/正则/" rel="tag"><i class="fa fa-tag"></i> 正则</a>
+            
+              <a href="/blog/tags/re/" rel="tag"><i class="fa fa-tag"></i> re</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/connectionReset22/" rel="next" title="Connection reset by ip port 22 解决办法">
+                  <i class="fa fa-chevron-left"></i> Connection reset by ip port 22 解决办法
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
       </footer>
+    
   </div>
   
   
   
   </article>
 
-      
-    
-      
-          <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://blog.mosuzi.top/blog/connectionReset22/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mosuzi">
-      <meta itemprop="description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of desert can not erode the Mosu Valley and the empire has established.">
-      <meta itemprop="image" content="/blog/uploads/logo.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mosu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/connectionReset22/" class="post-title-link" itemprop="url">Connection reset by ip port 22 解决办法</a>
-          
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-14 14:05:00" itemprop="dateCreated datePublished" datetime="2019-09-14T14:05:00+08:00">2019-09-14</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-18 17:58:51" itemprop="dateModified" datetime="2019-09-18T17:58:51+08:00">2019-09-18</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/博客/" itemprop="url" rel="index"><span itemprop="name">博客</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-        
-      
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/blog/connectionReset22/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/connectionReset22/" itemprop="commentCount"></span></a>
-  </span>
-  
-  
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>1.6k</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>昨天才在服务器上搭好的博客，今天更新一下头像就又git失败了，还报出了Connection reset by [ip] port 22这种错误，相当头疼。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/connectionReset22/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
   </div>
-  
-  
-  
-  </article>
-
-      
-    
-      
-          <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://blog.mosuzi.top/blog/how2useMD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mosuzi">
-      <meta itemprop="description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of desert can not erode the Mosu Valley and the empire has established.">
-      <meta itemprop="image" content="/blog/uploads/logo.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mosu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/how2useMD/" class="post-title-link" itemprop="url">markdown用法</a>
-          
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-13 13:24:30" itemprop="dateCreated datePublished" datetime="2019-09-13T13:24:30+08:00">2019-09-13</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-18 17:59:02" itemprop="dateModified" datetime="2019-09-18T17:59:02+08:00">2019-09-18</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-        
-      
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/blog/how2useMD/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/how2useMD/" itemprop="commentCount"></span></a>
-  </span>
-  
-  
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>2k</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          markdown用法合集，不过由于博客功能尚未完善，因此部分公式和图表不能显示完全，但这不影响markdown本身的使用，渲染无效的公式和图表仍然会显示源码
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/how2useMD/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-      
-    
-      
-          <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://blog.mosuzi.top/blog/oracleSimple/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mosuzi">
-      <meta itemprop="description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of desert can not erode the Mosu Valley and the empire has established.">
-      <meta itemprop="image" content="/blog/uploads/logo.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mosu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/oracleSimple/" class="post-title-link" itemprop="url">oracle初步语法示例</a>
-          
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-13 13:13:54" itemprop="dateCreated datePublished" datetime="2019-09-13T13:13:54+08:00">2019-09-13</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-18 17:53:31" itemprop="dateModified" datetime="2019-09-18T17:53:31+08:00">2019-09-18</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-        
-      
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/blog/oracleSimple/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/oracleSimple/" itemprop="commentCount"></span></a>
-  </span>
-  
-  
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>1.6k</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          这是学习oracle的笔记，只显示了示例，未能细细解释，完善中...
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/oracleSimple/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-      
-    
-      
-    
-  </div>
-
-  
 
 
           </div>
           
+    
+    <div class="comments" id="comments"></div>
+  
 
         </div>
           
@@ -996,6 +702,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -1008,6 +719,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式全集"><span class="nav-number">1.</span> <span class="nav-text">表达式全集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用正则表达式"><span class="nav-number">2.</span> <span class="nav-text">常用正则表达式</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -1174,18 +887,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
   
 
-  
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
   
 
   
