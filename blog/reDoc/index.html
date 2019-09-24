@@ -73,7 +73,7 @@
 <meta property="og:site_name" content="Mosu">
 <meta property="og:description" content="正则表达式全集备用，源:http://tool.oschina.net/uploads/apidocs/jquery/regexp.html">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-24T09:18:05.184Z">
+<meta property="og:updated_time" content="2019-09-24T09:23:25.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式全集">
 <meta name="twitter:description" content="正则表达式全集备用，源:http://tool.oschina.net/uploads/apidocs/jquery/regexp.html">
@@ -297,7 +297,7 @@
                 
               
 
-              <time title="创建时间：2019-09-24 17:12:05 / 修改时间：17:18:05" itemprop="dateCreated datePublished" datetime="2019-09-24T17:12:05+08:00">2019-09-24</time>
+              <time title="创建时间：2019-09-24 17:12:05 / 修改时间：17:23:25" itemprop="dateCreated datePublished" datetime="2019-09-24T17:12:05+08:00">2019-09-24</time>
             </span>
           
             
@@ -349,7 +349,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>3.4k</span>
+              <span>3.7k</span>
             </span>
           
             <div class="post-description">正则表达式全集备用，源:<a href="http://tool.oschina.net/uploads/apidocs/jquery/regexp.html">http://tool.oschina.net/uploads/apidocs/jquery/regexp.html</a></div>
@@ -415,8 +415,7 @@
 </tr>
 <tr>
 <td style="text-align:center">.</td>
-<td style="text-align:center">匹配除“<code>\</code><em><code>n</code></em>”之外的任何单个字符。要匹配包括“<code>\</code><em><code>n</code></em>”在内的任何字符，请使用像“`(.</td>
-<td>\n)`”的模式。</td>
+<td style="text-align:center">匹配除“<code>\</code><em><code>n</code></em>”之外的任何单个字符。要匹配包括“<code>\</code><em><code>n</code></em>”在内的任何字符，请使用像“<code>(.&amp;#124;\n)</code>”的模式。</td>
 </tr>
 <tr>
 <td style="text-align:center">(pattern)</td>
@@ -424,45 +423,27 @@
 </tr>
 <tr>
 <td style="text-align:center">(?:pattern)</td>
-<td style="text-align:center">匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“`(</td>
-<td>)<code>”来组合一个模式的各个部分是很有用。例如“</code>industr(?:y</td>
-<td>ies)<code>”就是一个比“</code>industry</td>
-<td>industries`”更简略的表达式。</td>
+<td style="text-align:center">匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“<code>(&amp;#124;)</code>”来组合一个模式的各个部分是很有用。例如“<code>industr(?:y&amp;#124;ies)</code>”就是一个比“<code>industry&amp;#124;industries</code>”更简略的表达式。</td>
 </tr>
 <tr>
 <td style="text-align:center">(?=pattern)</td>
-<td style="text-align:center">正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“`Windows(?=95</td>
-<td>98</td>
-<td>NT</td>
-<td>2000)<code>”能匹配“</code>Windows2000<code>”中的“</code>Windows<code>”，但不能匹配“</code>Windows3.1<code>”中的“</code>Windows`”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+<td style="text-align:center">正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“<code>Windows(?=95&amp;#124;98&amp;#124;NT&amp;#124;2000)</code>”能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
 </tr>
 <tr>
 <td style="text-align:center">(?!pattern)</td>
-<td style="text-align:center">正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“`Windows(?!95</td>
-<td>98</td>
-<td>NT</td>
-<td>2000)<code>”能匹配“</code>Windows3.1<code>”中的“</code>Windows<code>”，但不能匹配“</code>Windows2000<code>”中的“</code>Windows`”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</td>
+<td style="text-align:center">正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“<code>Windows(?!95&amp;#124;98&amp;#124;NT&amp;#124;2000)</code>”能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</td>
 </tr>
 <tr>
 <td style="text-align:center">(?&lt;=pattern)</td>
-<td style="text-align:center">反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“`(?&lt;=95</td>
-<td>98</td>
-<td>NT</td>
-<td>2000)Windows<code>”能匹配“</code>2000Windows<code>”中的“</code>Windows<code>”，但不能匹配“</code>3.1Windows<code>”中的“</code>Windows`”。</td>
+<td style="text-align:center">反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“<code>(?&lt;=95&amp;#124;98&amp;#124;NT&amp;#124;2000)Windows</code>”能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”。</td>
 </tr>
 <tr>
 <td style="text-align:center">(?&lt;!pattern)</td>
-<td style="text-align:center">反向否定预查，与正向否定预查类拟，只是方向相反。例如“`(?&lt;!95</td>
-<td>98</td>
-<td>NT</td>
-<td>2000)Windows<code>”能匹配“</code>3.1Windows<code>”中的“</code>Windows<code>”，但不能匹配“</code>2000Windows<code>”中的“</code>Windows`”。</td>
+<td style="text-align:center">反向否定预查，与正向否定预查类拟，只是方向相反。例如“<code>(?&lt;!95&amp;#124;98&amp;#124;NT&amp;#124;2000)Windows</code>”能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”。</td>
 </tr>
 <tr>
-<td style="text-align:center">x\</td>
-<td style="text-align:center">y</td>
-<td>匹配x或y。例如，“`z</td>
-<td>food<code>”能匹配“</code>z<code>”或“</code>food<code>”。“</code>(z</td>
-<td>f)ood<code>”则匹配“</code>zood<code>”或“</code>food`”。</td>
+<td style="text-align:center">x\&#124;y</td>
+<td style="text-align:center">匹配x或y。例如，“<code>z&amp;#124;food</code>”能匹配“<code>z</code>”或“<code>food</code>”。“<code>(z&amp;#124;f)ood</code>”则匹配“<code>zood</code>”或“<code>food</code>”。</td>
 </tr>
 <tr>
 <td style="text-align:center">[xyz]</td>
@@ -578,8 +559,7 @@
 </tr>
 <tr>
 <td style="text-align:center">十六进制值</td>
-<td>/^#?([a-f0-9]{6}\</td>
-<td>[a-f0-9]{3})$/</td>
+<td>/^#?([a-f0-9]{6}\&#124;[a-f0-9]{3})$/</td>
 </tr>
 <tr>
 <td style="text-align:center">电子邮箱</td>
@@ -591,25 +571,15 @@
 </tr>
 <tr>
 <td style="text-align:center">IP 地址</td>
-<td>/((2[0-4]\d\</td>
-<td>25[0-5]\</td>
-<td>[01]?\d\d?).){3}(2[0-4]\d\</td>
-<td>25[0-5]\</td>
-<td>[01]?\d\d?)/ /^(?:(?:25[0-5]\</td>
-<td>2[0-4][0-9]\</td>
-<td>[01]?[0-9][0-9]?).){3}(?:25[0-5]\</td>
-<td>2[0-4][0-9]\</td>
-<td>[01]?[0-9][0-9]?)$/</td>
+<td>/((2[0-4]\d\&#124;25[0-5]\&#124;[01]?\d\d?).){3}(2[0-4]\d\&#124;25[0-5]\&#124;[01]?\d\d?)/ /^(?:(?:25[0-5]\&#124;2[0-4][0-9]\&#124;[01]?[0-9][0-9]?).){3}(?:25[0-5]\&#124;2[0-4][0-9]\&#124;[01]?[0-9][0-9]?)$/</td>
 </tr>
 <tr>
 <td style="text-align:center">HTML 标签</td>
-<td>/^&lt;([a-z]+)(<sup><a href="#fn_<" id="reffn_<"><</a></sup>+)<em>(?:&gt;(.</em>)&lt;\/\1&gt;\</td>
-<td>\s+\/&gt;)$/</td>
+<td>/^&lt;([a-z]+)(<sup><a href="#fn_<" id="reffn_<"><</a></sup>+)<em>(?:&gt;(.</em>)&lt;\/\1&gt;\&#124;\s+\/&gt;)$/</td>
 </tr>
 <tr>
 <td style="text-align:center">删除代码\注释</td>
-<td>(?&lt;!http:\</td>
-<td>\S)//.*$</td>
+<td>(?&lt;!http:\&#124;\S)//.*$</td>
 </tr>
 <tr>
 <td style="text-align:center">Unicode编码中的汉字范围</td>
