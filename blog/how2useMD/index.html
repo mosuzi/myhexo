@@ -36,7 +36,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     algolia: {
       appID: '',
@@ -73,12 +73,10 @@
 <meta property="og:site_name" content="Mosu">
 <meta property="og:description" content="markdown用法合集, mark一下">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/208px-Markdown-mark.svg.png">
 <meta property="og:updated_time" content="2019-09-27T12:57:46.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="markdown用法">
 <meta name="twitter:description" content="markdown用法合集, mark一下">
-<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/208px-Markdown-mark.svg.png">
   <link rel="canonical" href="http://blog.mosuzi.top/how2useMD/">
 
 
@@ -128,6 +126,7 @@
 </noscript>
 
   <!-- <link rel="stylesheet" href="/blog/dist/APlayer.min.css"> -->
+  <link rel="stylesheet" href="/blog/css/photos/photos.css">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -215,17 +214,6 @@
     
 
     <a href="/blog/pics/" rel="section"><i class="menu-item-icon fa fa-fw fa-photo"></i> <br>相册</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-fictions">
-      
-    
-
-    <a href="/blog/categories/fiction/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>小说</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -385,7 +373,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="markdown用法"><a href="#markdown用法" class="headerlink" title="markdown用法"></a>markdown用法</h4><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/208px-Markdown-mark.svg.png" alt="Markdown"></p><h4 id="功能快捷键"><a href="#功能快捷键" class="headerlink" title="功能快捷键"></a>功能快捷键</h4><ol>
+        <h4 id="markdown用法"><a href="#markdown用法" class="headerlink" title="markdown用法"></a>markdown用法</h4><p><img alt="Markdown" data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/208px-Markdown-mark.svg.png"></p><h4 id="功能快捷键"><a href="#功能快捷键" class="headerlink" title="功能快捷键"></a>功能快捷键</h4><ol>
 <li>撤销：<kbd>Ctrl/Command</kbd> + <kbd>Z</kbd></li>
 <li>重做：<kbd>Ctrl/Command</kbd> + <kbd>Y</kbd></li>
 <li>加粗：<kbd>Ctrl/Command</kbd> + <kbd>B</kbd></li>
@@ -723,7 +711,7 @@ C-->A:wow, that`s wonderful</textarea><textarea id="sequence-0-options" style="d
         
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -837,6 +825,7 @@ C-->A:wow, that`s wonderful</textarea><textarea id="sequence-0-options" style="d
   <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
   <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
 <script src="/blog/js/utils.js?v=7.4.0"></script><script src="/blog/js/motion.js?v=7.4.0"></script>
 <script src="/blog/js/schemes/pisces.js?v=7.4.0"></script>
 <script src="/blog/js/next-boot.js?v=7.4.0"></script>
@@ -968,6 +957,8 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   <script type="text/javascript" src="/blog/js/click.js"></script>
   <!--崩溃欺骗-->
   <script type="text/javascript" src="/blog/js/crash_cheat.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
+  <script type="text/javascript" src="/blog/js/photo.js"></script>
   <!-- <script type="text/javascript" src="/blog/dist/APlayer.min.js"></script> -->
   <!-- <script type="text/javascript" src="/blog/dist/music.js"></script> -->
 <script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/blog/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>

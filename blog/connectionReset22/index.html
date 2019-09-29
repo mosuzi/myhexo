@@ -36,7 +36,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     algolia: {
       appID: '',
@@ -126,6 +126,7 @@
 </noscript>
 
   <!-- <link rel="stylesheet" href="/blog/dist/APlayer.min.css"> -->
+  <link rel="stylesheet" href="/blog/css/photos/photos.css">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -213,17 +214,6 @@
     
 
     <a href="/blog/pics/" rel="section"><i class="menu-item-icon fa fa-fw fa-photo"></i> <br>相册</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-fictions">
-      
-    
-
-    <a href="/blog/categories/fiction/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>小说</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -524,7 +514,7 @@
         
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -638,6 +628,7 @@
   <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
   <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
 <script src="/blog/js/utils.js?v=7.4.0"></script><script src="/blog/js/motion.js?v=7.4.0"></script>
 <script src="/blog/js/schemes/pisces.js?v=7.4.0"></script>
 <script src="/blog/js/next-boot.js?v=7.4.0"></script>
@@ -719,6 +710,8 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   <script type="text/javascript" src="/blog/js/click.js"></script>
   <!--崩溃欺骗-->
   <script type="text/javascript" src="/blog/js/crash_cheat.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
+  <script type="text/javascript" src="/blog/js/photo.js"></script>
   <!-- <script type="text/javascript" src="/blog/dist/APlayer.min.js"></script> -->
   <!-- <script type="text/javascript" src="/blog/dist/music.js"></script> -->
 <script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/blog/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>

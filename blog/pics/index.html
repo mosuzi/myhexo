@@ -36,7 +36,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     algolia: {
       appID: '',
@@ -65,15 +65,18 @@
     })();
 </script>
 
-  <meta name="keywords" content="mosuzi">
+  <meta name="description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of desert can not erode the Mosu Valley and the empire has established.">
+<meta name="keywords" content="mosuzi">
 <meta property="og:type" content="website">
-<meta property="og:title" content="pics">
+<meta property="og:title" content="photos">
 <meta property="og:url" content="http://blog.mosuzi.top/pics/index.html">
 <meta property="og:site_name" content="Mosu">
+<meta property="og:description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of desert can not erode the Mosu Valley and the empire has established.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-29T06:36:28.154Z">
+<meta property="og:updated_time" content="2019-09-29T15:32:23.400Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pics">
+<meta name="twitter:title" content="photos">
+<meta name="twitter:description" content="Mosu is located on the shores of Mosu Lake, facing the vast Chu Sea, backed by the Yihan Mountains. Thousands of miles of desert can not erode the Mosu Valley and the empire has established.">
   <link rel="canonical" href="http://blog.mosuzi.top/pics/">
 
 
@@ -88,7 +91,7 @@
   };
 </script>
 
-  <title>pics | Mosu</title>
+  <title>photos | Mosu</title>
   
 
 
@@ -123,6 +126,7 @@
 </noscript>
 
   <!-- <link rel="stylesheet" href="/blog/dist/APlayer.min.css"> -->
+  <link rel="stylesheet" href="/blog/css/photos/photos.css">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -212,17 +216,6 @@
     <a href="/blog/pics/" rel="section"><i class="menu-item-icon fa fa-fw fa-photo"></i> <br>相册</a>
 
   </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-fictions">
-      
-    
-
-    <a href="/blog/categories/fiction/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>小说</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a href="javascript:;" class="popup-trigger">
         
@@ -281,9 +274,6 @@
       
       
     
-      
-      
-    
     
 
   
@@ -299,12 +289,11 @@
     <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">pics
+<h2 class="post-title" itemprop="name headline">photos
 
 </h2>
 
 <div class="post-meta">
-    <div class="post-description">[object Object]</div>
   
 
 </div>
@@ -316,7 +305,7 @@
       
       <div class="post-body">
         
-          
+          <div class="ImageGrid"></div>
         
       </div>
       
@@ -333,6 +322,9 @@
 
           </div>
           
+    
+    <div class="comments" id="comments"></div>
+  
 
         </div>
           
@@ -380,7 +372,7 @@
         
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -494,6 +486,7 @@
   <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
   <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
 <script src="/blog/js/utils.js?v=7.4.0"></script><script src="/blog/js/motion.js?v=7.4.0"></script>
 <script src="/blog/js/schemes/pisces.js?v=7.4.0"></script>
 <script src="/blog/js/next-boot.js?v=7.4.0"></script>
@@ -575,6 +568,8 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   <script type="text/javascript" src="/blog/js/click.js"></script>
   <!--崩溃欺骗-->
   <script type="text/javascript" src="/blog/js/crash_cheat.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
+  <script type="text/javascript" src="/blog/js/photo.js"></script>
   <!-- <script type="text/javascript" src="/blog/dist/APlayer.min.js"></script> -->
   <!-- <script type="text/javascript" src="/blog/dist/music.js"></script> -->
 <script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/blog/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
