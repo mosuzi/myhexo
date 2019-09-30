@@ -1676,7 +1676,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #d5e726;
+  background: #52c21d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2299,6 +2299,9 @@ ul.breadcrumb li + li:last-child {
 }
 .tag-cloud a:hover {
   color: #222 !important;
+}
+* {
+  cursor: url("/blog/images/AppStarting.ani") auto !important;
 }
 .header {
   margin: 0 auto;

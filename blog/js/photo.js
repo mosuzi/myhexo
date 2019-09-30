@@ -1,7 +1,7 @@
 photo = {
   page: 1,
   //offset 用于设置照片数量的上限
-  offset: 100,
+  offset: 30,
   init: function () {
     var that = this;
     //这里设置的是刚才生成的 json 文件路径
@@ -25,7 +25,7 @@ photo = {
       li += '<div class="card" style="width:250px">' +
         '<div class="ImageInCard" style="height:' + 250 * imageY / imageX + 'px">' +
         //href 和 src 的链接地址是相册照片外部链接，也可以放博客目录里
-        '<a data-fancybox="gallery" href="https://mosuzi.github.io/blogAlbum/photos/' + imgNameWithPattern + '?raw=true" data-caption="' + imgName + '">' +
+        '<a target="_blank" data-fancybox="gallery" href="https://mosuzi.github.io/blogAlbum/photos/' + imgNameWithPattern + '?raw=true" data-caption="' + imgName + '">' +
         '<img src="https://mosuzi.github.io/blogAlbum/min_photos/' + imgNameWithPattern + '?raw=true"/>' +
         '</a>' +
         '</div>' +
@@ -33,7 +33,7 @@ photo = {
         '</div>'
     }
     $(".ImageGrid").append(li);
-    //$(".ImageGrid").lazyload();
+    // $(".ImageGrid").lazyload();
     this.minigrid();
   },
   minigrid: function () {
