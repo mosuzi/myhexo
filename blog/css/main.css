@@ -151,7 +151,7 @@ template {
   color: #fff;
 }
 body {
-  background: #f5f7f9;
+  background: #f3eacb;
   color: #555;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
@@ -970,7 +970,7 @@ pre .javascript .function {
   padding-top: 0;
 }
 .back-to-top {
-  background: #f5f7f9;
+  background: #f3eacb;
   cursor: pointer;
   font-size: 12px;
   margin: 8px -10px -20px;
@@ -1676,7 +1676,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffedb0;
+  background: #08ffc4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2301,7 +2301,7 @@ ul.breadcrumb li + li:last-child {
   color: #222 !important;
 }
 * {
-  cursor: url("/blog/images/AppStarting.ani") auto !important;
+  cursor: url("/blog/images/AppStarting.ani"), auto !important;
 }
 .header {
   margin: 0 auto;
