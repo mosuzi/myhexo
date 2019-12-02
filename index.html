@@ -10,13 +10,17 @@
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" href="./css/style.css" type="text/css">
   <style media="screen">
-    #app {
-      height: 100%;
-      width: 100%;
+    body {
       background-color: black;
-      background-image: url('./blog/images/3.jpg');
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
+    }
+
+    #app {
+      height: 200%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .inner {
@@ -27,6 +31,14 @@
       text-align: center;
       align-items: center;
       color: white;
+    }
+
+    .img-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .inner h1 {
@@ -41,7 +53,9 @@
 </head>
 
 <body>
-  <div id="app" @click="openUrl()">
+  <div id="app">
+    <div class="img-container">
+      <img @click="openUrl()" src="./blog/images/3.jpg"></img></div>
     <div class="inner">
       <h1>Mosu</h1>
       <p>淡定的人生从不需要起起落落</p>
@@ -49,13 +63,13 @@
       <p>让你幸福，这是计划的一部分</p>
       <p>给岁月以文明，而不是给文明以岁月</p>
       <p>上岸的鱼不再是鱼，真正进入太空的人也不再是人了</p>
-      <p>吧海弄干的鱼在海干前上了陆地，从一片黑暗森林奔向另一片黑暗森林</p>
+      <p>把海弄干的鱼在海干前上了陆地，从一片黑暗森林奔向另一片黑暗森林</p>
       <p>藏好自己，做好清理</p>
       <!-- <el-col :span="4">
         <el-button @click="openUrl()" type="primary" round icon="el-icon-d-arrow-right">
           前进四</el-button>
       </el-col> -->
-      
+
     </div>
   </div>
 </body>
@@ -72,7 +86,7 @@
       }
     },
     methods: {
-      openUrl () {
+      openUrl() {
         window.location.href = './blog';
       }
     },
