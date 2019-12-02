@@ -12,6 +12,11 @@
   <style media="screen">
     #app {
       height: 100%;
+      width: 100%;
+      background-color: black;
+      background-image: url('./blog/images/3.jpg');
+      object-position: 50% 50%;
+      object-fit: contain;
     }
 
     .inner {
@@ -21,6 +26,7 @@
       flex-flow: column;
       text-align: center;
       align-items: center;
+      color: white;
     }
 
     .inner h1 {
@@ -35,7 +41,7 @@
 </head>
 
 <body>
-  <div id="app">
+  <div id="app" @click="openUrl()">
     <div class="inner">
       <h1>Mosu</h1>
       <p>淡定的人生从不需要起起落落</p>
@@ -45,10 +51,10 @@
       <p>上岸的鱼不再是鱼，真正进入太空的人也不再是人了</p>
       <p>吧海弄干的鱼在海干前上了陆地，从一片黑暗森林奔向另一片黑暗森林</p>
       <p>藏好自己，做好清理</p>
-      <el-col :span="4">
+      <!-- <el-col :span="4">
         <el-button @click="openUrl()" type="primary" round icon="el-icon-d-arrow-right">
           前进四</el-button>
-      </el-col>
+      </el-col> -->
       
     </div>
   </div>
